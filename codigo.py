@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('vendas.csv')
 
 # Deixa o nome bonito
-df["Cliente"] = df["Cliente"].Str.strip().str.title()
+df["Cliente"] = df["Cliente"].str.strip().str.title()
 df["Cidade"] = df["Cidade"].str.strip().str.title()
 
 # So quem vendeu 
 vendas = df[df["Vendeu"] == "sim"]
 
-print("=== RELATORIO DE VENDAS ==="]
+print("=== RELATORIO DE VENDAS ===")
 print(f"Total vendido:R${vendas['Valor'].sum()})
 print(vendas.groupby("Cidade")["Valor"].sum())
 
