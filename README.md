@@ -18,5 +18,5 @@
 
 ## Como rodar
 ''' bash
-Python codigo.py
+python codigo.py
 '''
