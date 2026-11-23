@@ -17,7 +17,7 @@ print(vendas.groupby("Cidade")["Valor"].sum())
 
 # 2. GRAFICO
 plt.figure(figsize=(8, 5))
-plt.bar(vendas["Cidade"], vendas["Valor"],color='skyblue')
+plt.bar(vendas.groupby("Cidade")["Valor"].sum().index, vendas.groupby("Cidade")["Valor"].sum().values, color='skyblue')
 plt.title('Vendas por Cidade')
 plt.xlabel('Cidade')
 plt.ylabel('Valor (R$)')
